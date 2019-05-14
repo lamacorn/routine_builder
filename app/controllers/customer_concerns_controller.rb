@@ -10,7 +10,8 @@ class CustomerConcernsController < ApplicationController
   end
 
   def index
-    @customer_concerns = current_customer.customer_concerns.page(params[:page]).per(10)
+    @q = current_customer.customer_concerns.ransack(params[:q])
+    @customer_concerns = @q.result(:distinct => true).includes(:customer, :concern).page(params[:page]).per(10)
 
     render("customer_concern_templates/index.html.erb")
   end

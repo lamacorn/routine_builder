@@ -10,7 +10,8 @@ class RoutinesController < ApplicationController
   end
 
   def index
-    @routines = Routine.page(params[:page]).per(10)
+    @q = Routine.ransack(params[:q])
+    @routines = @q.result(:distinct => true).includes(:customer, :routine_products).page(params[:page]).per(10)
 
     render("routine_templates/index.html.erb")
   end
