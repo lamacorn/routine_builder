@@ -51,6 +51,14 @@ class RoutinesController < ApplicationController
     end
   end
 
+  def destroy_row_from_customer
+    @routine = Routine.find(params.fetch("id_to_remove"))
+
+    @routine.destroy
+
+    redirect_to("/customers/#{@routine.customer_id}", notice: "Routine deleted successfully.")
+  end
+
   def destroy_row
     @routine = Routine.find(params.fetch("id_to_remove"))
 

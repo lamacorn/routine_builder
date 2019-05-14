@@ -18,6 +18,9 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_routine_product/:id_to_remove", { :controller => "routine_products", :action => "destroy_row" })
+  get("/delete_routine_product_from_primary_concern/:id_to_remove", { :controller => "routine_products", :action => "destroy_row_from_primary_concern" })
+  get("/delete_routine_product_from_routine/:id_to_remove", { :controller => "routine_products", :action => "destroy_row_from_routine" })
+  get("/delete_routine_product_from_product/:id_to_remove", { :controller => "routine_products", :action => "destroy_row_from_product" })
 
   #------------------------------
 
@@ -37,6 +40,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_customer_concern/:id_to_remove", { :controller => "customer_concerns", :action => "destroy_row" })
+  get("/delete_customer_concern_from_concern/:id_to_remove", { :controller => "customer_concerns", :action => "destroy_row_from_concern" })
+  get("/delete_customer_concern_from_customer/:id_to_remove", { :controller => "customer_concerns", :action => "destroy_row_from_customer" })
 
   #------------------------------
 
@@ -94,6 +99,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_routine/:id_to_remove", { :controller => "routines", :action => "destroy_row" })
+  get("/delete_routine_from_customer/:id_to_remove", { :controller => "routines", :action => "destroy_row_from_customer" })
 
   #------------------------------
 
@@ -113,6 +119,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_product/:id_to_remove", { :controller => "products", :action => "destroy_row" })
+  get("/delete_product_from_category/:id_to_remove", { :controller => "products", :action => "destroy_row_from_category" })
 
   #------------------------------
 

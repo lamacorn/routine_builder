@@ -53,6 +53,22 @@ class CustomerConcernsController < ApplicationController
     end
   end
 
+  def destroy_row_from_customer
+    @customer_concern = CustomerConcern.find(params.fetch("id_to_remove"))
+
+    @customer_concern.destroy
+
+    redirect_to("/customers/#{@customer_concern.customer_id}", notice: "CustomerConcern deleted successfully.")
+  end
+
+  def destroy_row_from_concern
+    @customer_concern = CustomerConcern.find(params.fetch("id_to_remove"))
+
+    @customer_concern.destroy
+
+    redirect_to("/concerns/#{@customer_concern.concern_id}", notice: "CustomerConcern deleted successfully.")
+  end
+
   def destroy_row
     @customer_concern = CustomerConcern.find(params.fetch("id_to_remove"))
 
