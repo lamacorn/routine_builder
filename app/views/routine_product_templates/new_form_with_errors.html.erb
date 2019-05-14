@@ -27,7 +27,7 @@
     </label>
 
     <!-- Input for routine_id start -->
-    <input type="text" id="routine_id" name="routine_id" class="form-control" value="<%= @routine_product.routine_id %>">
+    <%= select_tag(:routine_id, options_from_collection_for_select(Routine.all, :id, :customer_id, @routine_product.routine_id), :class => "form-control") %>
     <!-- Input for routine_id end -->
   </div>
   <!-- Label and input for routine_id end -->
