@@ -38,7 +38,11 @@
       </dt>
       <!-- Display customer_id start -->
       <dd>
-        <%= @customer_concern.customer_id %>
+        <% if @customer_concern.customer.present? %>
+          <a href="/customers/<%= @customer_concern.customer_id %>">
+            <%= @customer_concern.customer.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display customer_id end -->
 
@@ -47,7 +51,11 @@
       </dt>
       <!-- Display concern_id start -->
       <dd>
-        <%= @customer_concern.concern_id %>
+        <% if @customer_concern.concern.present? %>
+          <a href="/concerns/<%= @customer_concern.concern_id %>">
+            <%= @customer_concern.concern.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display concern_id end -->
 

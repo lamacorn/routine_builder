@@ -74,13 +74,21 @@
 
         <!-- Display routine_product.routine_id start -->
         <td>
-          <%= routine_product.routine.customer_id %>
+          <% if routine_product.routine.present? %>
+            <a href="/routines/<%= routine_product.routine.id %>">
+              <%= routine_product.routine.customer_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display routine_product.routine_id end -->
 
         <!-- Display routine_product.product_id start -->
         <td>
-          <%= routine_product.product.name %>
+          <% if routine_product.product.present? %>
+            <a href="/products/<%= routine_product.product.id %>">
+              <%= routine_product.product.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display routine_product.product_id end -->
 
@@ -104,7 +112,11 @@
 
         <!-- Display routine_product.primary_concern_id start -->
         <td>
-          <%= routine_product.primary_concern.name %>
+          <% if routine_product.primary_concern.present? %>
+            <a href="/concerns/<%= routine_product.primary_concern.id %>">
+              <%= routine_product.primary_concern.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display routine_product.primary_concern_id end -->
 

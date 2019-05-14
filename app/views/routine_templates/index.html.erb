@@ -54,7 +54,11 @@
 
         <!-- Display routine.customer_id start -->
         <td>
-          <%= routine.customer.email %>
+          <% if routine.customer.present? %>
+            <a href="/customers/<%= routine.customer.id %>">
+              <%= routine.customer.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display routine.customer_id end -->
 

@@ -34,7 +34,11 @@
       </dt>
       <!-- Display routine_id start -->
       <dd>
-        <%= @routine_product.routine_id %>
+        <% if @routine_product.routine.present? %>
+          <a href="/routines/<%= @routine_product.routine_id %>">
+            <%= @routine_product.routine.customer_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display routine_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display product_id start -->
       <dd>
-        <%= @routine_product.product_id %>
+        <% if @routine_product.product.present? %>
+          <a href="/products/<%= @routine_product.product_id %>">
+            <%= @routine_product.product.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display product_id end -->
 
@@ -79,7 +87,11 @@
       </dt>
       <!-- Display primary_concern_id start -->
       <dd>
-        <%= @routine_product.primary_concern_id %>
+        <% if @routine_product.primary_concern.present? %>
+          <a href="/concerns/<%= @routine_product.primary_concern_id %>">
+            <%= @routine_product.primary_concern.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display primary_concern_id end -->
 

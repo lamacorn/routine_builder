@@ -38,7 +38,11 @@
       </dt>
       <!-- Display customer_id start -->
       <dd>
-        <%= @routine.customer_id %>
+        <% if @routine.customer.present? %>
+          <a href="/customers/<%= @routine.customer_id %>">
+            <%= @routine.customer.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display customer_id end -->
 

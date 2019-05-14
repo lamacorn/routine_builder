@@ -58,13 +58,21 @@
 
         <!-- Display customer_concern.customer_id start -->
         <td>
-          <%= customer_concern.customer.email %>
+          <% if customer_concern.customer.present? %>
+            <a href="/customers/<%= customer_concern.customer.id %>">
+              <%= customer_concern.customer.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display customer_concern.customer_id end -->
 
         <!-- Display customer_concern.concern_id start -->
         <td>
-          <%= customer_concern.concern.name %>
+          <% if customer_concern.concern.present? %>
+            <a href="/concerns/<%= customer_concern.concern.id %>">
+              <%= customer_concern.concern.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display customer_concern.concern_id end -->
 

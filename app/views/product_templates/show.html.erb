@@ -52,7 +52,11 @@
       </dt>
       <!-- Display category_id start -->
       <dd>
-        <%= @product.category_id %>
+        <% if @product.category.present? %>
+          <a href="/categories/<%= @product.category_id %>">
+            <%= @product.category.category %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display category_id end -->
 
