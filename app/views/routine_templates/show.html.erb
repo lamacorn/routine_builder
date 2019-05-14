@@ -13,17 +13,21 @@
 
       <!-- Edit link routine start -->
       <div class="col">
-        <a href="/routines/<%= @routine.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit routine
-        </a>
+        <% if current_customer == @routine.customer %>
+          <a href="/routines/<%= @routine.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit routine
+          </a>
+        <% end %>
       </div>
       <!-- Edit link routine end -->
 
       <!-- Delete link routine start -->
       <div class="col">
-        <a href="/delete_routine/<%= @routine.id %>" class="btn btn-block btn-outline-secondary">
-          Delete routine
-        </a>
+        <% if current_customer == @routine.customer %>
+          <a href="/delete_routine/<%= @routine.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete routine
+          </a>
+        <% end %>
       </div>
       <!-- Delete link routine end -->
     </div>
