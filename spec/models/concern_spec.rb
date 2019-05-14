@@ -4,6 +4,8 @@ RSpec.describe Concern, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:customer_concerns) }
+
     end
 
     describe "InDirect Associations" do
