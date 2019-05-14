@@ -1,0 +1,45 @@
+<h1>
+  Add a new customer concern
+</h1>
+
+
+<hr>
+
+<!-- Form customer_concern start -->
+<form action="/create_customer_concern" method="post">
+<!-- Form customer_concern end -->
+
+  <!-- Label and input for customer_id start -->
+  <div class="form-group">
+    <label for="customer_id">
+      Customer
+    </label>
+
+    <!-- Input for customer_id start -->
+    <input type="text" id="customer_id" name="customer_id" class="form-control">
+    <!-- Input for customer_id end -->
+  </div>
+  <!-- Label and input for customer_id end -->
+
+  <!-- Label and input for concern_id start -->
+  <div class="form-group">
+    <label for="concern_id">
+      Concern
+    </label>
+
+    <!-- Input for concern_id start -->
+    <input type="text" id="concern_id" name="concern_id" class="form-control">
+    <!-- Input for concern_id end -->
+  </div>
+  <!-- Label and input for concern_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create customer concern
+  </button>
+</form>
+
+<hr>
+
+<a href="/customer_concerns">
+  Go back
+</a>

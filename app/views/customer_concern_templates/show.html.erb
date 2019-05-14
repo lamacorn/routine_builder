@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Customer concern #<%= @customer_concern.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/customer_concerns" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link customer_concern start -->
+      <div class="col">
+        <a href="/customer_concerns/<%= @customer_concern.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit customer concern
+        </a>
+      </div>
+      <!-- Edit link customer_concern end -->
+
+      <!-- Delete link customer_concern start -->
+      <div class="col">
+        <a href="/delete_customer_concern/<%= @customer_concern.id %>" class="btn btn-block btn-outline-secondary">
+          Delete customer concern
+        </a>
+      </div>
+      <!-- Delete link customer_concern end -->
+    </div>
+
+    <dl>
+      <dt>
+        Customer
+      </dt>
+      <!-- Display customer_id start -->
+      <dd>
+        <%= @customer_concern.customer_id %>
+      </dd>
+      <!-- Display customer_id end -->
+
+      <dt>
+        Concern
+      </dt>
+      <!-- Display concern_id start -->
+      <dd>
+        <%= @customer_concern.concern_id %>
+      </dd>
+      <!-- Display concern_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@customer_concern.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@customer_concern.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
