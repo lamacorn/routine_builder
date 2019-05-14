@@ -1,0 +1,109 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Routine product #<%= @routine_product.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/routine_products" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link routine_product start -->
+      <div class="col">
+        <a href="/routine_products/<%= @routine_product.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit routine product
+        </a>
+      </div>
+      <!-- Edit link routine_product end -->
+
+      <!-- Delete link routine_product start -->
+      <div class="col">
+        <a href="/delete_routine_product/<%= @routine_product.id %>" class="btn btn-block btn-outline-secondary">
+          Delete routine product
+        </a>
+      </div>
+      <!-- Delete link routine_product end -->
+    </div>
+
+    <dl>
+      <dt>
+        Routine
+      </dt>
+      <!-- Display routine_id start -->
+      <dd>
+        <%= @routine_product.routine_id %>
+      </dd>
+      <!-- Display routine_id end -->
+
+      <dt>
+        Product
+      </dt>
+      <!-- Display product_id start -->
+      <dd>
+        <%= @routine_product.product_id %>
+      </dd>
+      <!-- Display product_id end -->
+
+      <dt>
+        Special note
+      </dt>
+      <!-- Display special_note start -->
+      <dd>
+        <%= @routine_product.special_note %>
+      </dd>
+      <!-- Display special_note end -->
+
+      <dt>
+        Time of day
+      </dt>
+      <!-- Display time_of_day start -->
+      <dd>
+        <%= @routine_product.time_of_day %>
+      </dd>
+      <!-- Display time_of_day end -->
+
+      <dt>
+        Use frequency
+      </dt>
+      <!-- Display use_frequency start -->
+      <dd>
+        <%= @routine_product.use_frequency %>
+      </dd>
+      <!-- Display use_frequency end -->
+
+      <dt>
+        Primary concern
+      </dt>
+      <!-- Display primary_concern_id start -->
+      <dd>
+        <%= @routine_product.primary_concern_id %>
+      </dd>
+      <!-- Display primary_concern_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@routine_product.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@routine_product.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

@@ -1,0 +1,132 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All routine products
+    </h1>
+
+    <a href="/routine_products/new" class="btn btn-block btn-outline-secondary">
+      Add a new routine product
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Routine
+        </th>
+
+        <th>
+          Product
+        </th>
+
+        <th>
+          Special note
+        </th>
+
+        <th>
+          Time of day
+        </th>
+
+        <th>
+          Use frequency
+        </th>
+
+        <th>
+          Primary concern
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @routine_products.each do |routine_product| %>
+      <tr>
+        <!-- Display routine_product.id start -->
+        <td>
+          <%= routine_product.id %>
+        </td>
+        <!-- Display routine_product.id end -->
+
+        <!-- Display routine_product.routine_id start -->
+        <td>
+          <%= routine_product.routine_id %>
+        </td>
+        <!-- Display routine_product.routine_id end -->
+
+        <!-- Display routine_product.product_id start -->
+        <td>
+          <%= routine_product.product_id %>
+        </td>
+        <!-- Display routine_product.product_id end -->
+
+        <!-- Display routine_product.special_note start -->
+        <td>
+          <%= routine_product.special_note %>
+        </td>
+        <!-- Display routine_product.special_note end -->
+
+        <!-- Display routine_product.time_of_day start -->
+        <td>
+          <%= routine_product.time_of_day %>
+        </td>
+        <!-- Display routine_product.time_of_day end -->
+
+        <!-- Display routine_product.use_frequency start -->
+        <td>
+          <%= routine_product.use_frequency %>
+        </td>
+        <!-- Display routine_product.use_frequency end -->
+
+        <!-- Display routine_product.primary_concern_id start -->
+        <td>
+          <%= routine_product.primary_concern_id %>
+        </td>
+        <!-- Display routine_product.primary_concern_id end -->
+
+        <!-- Display routine_product.created_at start -->
+        <td>
+          <%= time_ago_in_words(routine_product.created_at) %> ago
+        </td>
+        <!-- Display routine_product.created_at end -->
+
+        <!-- Display routine_product.updated_at start -->
+        <td>
+          <%= time_ago_in_words(routine_product.updated_at) %> ago
+        </td>
+        <!-- Display routine_product.updated_at end -->
+
+        <td>
+          <a href="/routine_products/<%= routine_product.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
