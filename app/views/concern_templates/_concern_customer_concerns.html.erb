@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_customer_concern_from_concern/<%= customer_concern.id %>">
-          Delete
-        </a>
+        <%if current_customer == customer_concern.customer %>
+          <a href="/delete_customer_concern_from_concern/<%= customer_concern.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>

@@ -1,4 +1,14 @@
 class CustomerConcernsController < ApplicationController
+  before_action :current_customer_must_be_customer_concern_customer, :only => [:edit_form, :update_row, :destroy_row]
+
+  def current_customer_must_be_customer_concern_customer
+    customer_concern = CustomerConcern.find(params["id_to_display"] || params["prefill_with_id"] || params["id_to_modify"] || params["id_to_remove"])
+
+    unless current_customer == customer_concern.customer
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @customer_concerns = CustomerConcern.all
 

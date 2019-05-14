@@ -13,17 +13,21 @@
 
       <!-- Edit link customer_concern start -->
       <div class="col">
-        <a href="/customer_concerns/<%= @customer_concern.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit customer concern
-        </a>
+        <% if current_customer == @customer_concern.customer %>
+          <a href="/customer_concerns/<%= @customer_concern.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit customer_concern
+          </a>
+        <% end %>
       </div>
       <!-- Edit link customer_concern end -->
 
       <!-- Delete link customer_concern start -->
       <div class="col">
-        <a href="/delete_customer_concern/<%= @customer_concern.id %>" class="btn btn-block btn-outline-secondary">
-          Delete customer concern
-        </a>
+        <% if current_customer == @customer_concern.customer %>
+          <a href="/delete_customer_concern/<%= @customer_concern.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete customer_concern
+          </a>
+        <% end %>
       </div>
       <!-- Delete link customer_concern end -->
     </div>
