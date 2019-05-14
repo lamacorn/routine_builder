@@ -84,7 +84,7 @@
     </label>
 
     <!-- Input for primary_concern_id start -->
-    <input type="text" id="primary_concern_id" name="primary_concern_id" class="form-control" value="<%= @routine_product.primary_concern_id %>">
+    <%= select_tag(:primary_concern_id, options_from_collection_for_select(Concern.all, :id, :name, @routine_product.primary_concern_id), :class => "form-control") %>
     <!-- Input for primary_concern_id end -->
   </div>
   <!-- Label and input for primary_concern_id end -->
