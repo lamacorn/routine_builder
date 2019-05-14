@@ -4,6 +4,8 @@ RSpec.describe Customer, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:routines) }
+
     it { should have_many(:customer_concerns) }
 
     end

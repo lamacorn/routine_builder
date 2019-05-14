@@ -1,6 +1,9 @@
 class Customer < ApplicationRecord
   # Direct associations
 
+  has_many   :routines,
+             :dependent => :destroy
+
   has_many   :customer_concerns,
              :dependent => :destroy
 
