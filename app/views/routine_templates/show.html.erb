@@ -1,0 +1,64 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Routine #<%= @routine.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/routines" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link routine start -->
+      <div class="col">
+        <a href="/routines/<%= @routine.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit routine
+        </a>
+      </div>
+      <!-- Edit link routine end -->
+
+      <!-- Delete link routine start -->
+      <div class="col">
+        <a href="/delete_routine/<%= @routine.id %>" class="btn btn-block btn-outline-secondary">
+          Delete routine
+        </a>
+      </div>
+      <!-- Delete link routine end -->
+    </div>
+
+    <dl>
+      <dt>
+        Customer
+      </dt>
+      <!-- Display customer_id start -->
+      <dd>
+        <%= @routine.customer_id %>
+      </dd>
+      <!-- Display customer_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@routine.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@routine.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Routine resource:
+
+  # CREATE
+  get("/routines/new", { :controller => "routines", :action => "new_form" })
+  post("/create_routine", { :controller => "routines", :action => "create_row" })
+
+  # READ
+  get("/routines", { :controller => "routines", :action => "index" })
+  get("/routines/:id_to_display", { :controller => "routines", :action => "show" })
+
+  # UPDATE
+  get("/routines/:prefill_with_id/edit", { :controller => "routines", :action => "edit_form" })
+  post("/update_routine/:id_to_modify", { :controller => "routines", :action => "update_row" })
+
+  # DELETE
+  get("/delete_routine/:id_to_remove", { :controller => "routines", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Product resource:
 
   # CREATE

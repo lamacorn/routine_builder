@@ -1,0 +1,44 @@
+<!-- Validation failure messages -->
+<% if @routine.present? %>
+  <% if @routine.errors.any? %>
+    <% @routine.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new routine
+</h1>
+
+
+<hr>
+
+<!-- Form routine start -->
+<form action="/create_routine" method="post">
+<!-- Form routine end -->
+
+  <!-- Label and input for customer_id start -->
+  <div class="form-group">
+    <label for="customer_id">
+      Customer
+    </label>
+
+    <!-- Input for customer_id start -->
+    <input type="text" id="customer_id" name="customer_id" class="form-control" value="<%= @routine.customer_id %>">
+    <!-- Input for customer_id end -->
+  </div>
+  <!-- Label and input for customer_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create routine
+  </button>
+</form>
+
+<hr>
+
+<a href="/routines">
+  Go back
+</a>
