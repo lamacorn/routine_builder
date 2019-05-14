@@ -56,7 +56,7 @@ class CustomerConcernsController < ApplicationController
   def update_row
     @customer_concern = CustomerConcern.find(params.fetch("id_to_modify"))
 
-    @customer_concern.customer_id = params.fetch("customer_id")
+    
     @customer_concern.concern_id = params.fetch("concern_id")
 
     if @customer_concern.valid?
