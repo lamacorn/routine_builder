@@ -24,7 +24,7 @@
     </label>
 
     <!-- Input for customer_id start -->
-    <input type="text" id="customer_id" name="customer_id" class="form-control" value="<%= @customer_concern.customer_id %>">
+    <%= select_tag(:customer_id, options_from_collection_for_select(Customer.all, :id, :email, @customer_concern.customer_id), :class => "form-control") %>
     <!-- Input for customer_id end -->
   </div>
   <!-- Label and input for customer_id end -->
