@@ -22,7 +22,7 @@ class ProductsController < ApplicationController
     @product = Product.new
 
     @product.name = params.fetch("name")
-    @product.image = params.fetch("image")
+    @product.image = params.fetch("image") if params.key?("image")
     @product.category_id = params.fetch("category_id")
     @product.description = params.fetch("description")
     @product.price = params.fetch("price")
@@ -40,7 +40,7 @@ class ProductsController < ApplicationController
     @product = Product.new
 
     @product.name = params.fetch("name")
-    @product.image = params.fetch("image")
+    @product.image = params.fetch("image") if params.key?("image")
     @product.category_id = params.fetch("category_id")
     @product.description = params.fetch("description")
     @product.price = params.fetch("price")
@@ -64,7 +64,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params.fetch("id_to_modify"))
 
     @product.name = params.fetch("name")
-    @product.image = params.fetch("image")
+    @product.image = params.fetch("image") if params.key?("image")
     @product.category_id = params.fetch("category_id")
     @product.description = params.fetch("description")
     @product.price = params.fetch("price")

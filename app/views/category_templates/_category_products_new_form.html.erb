@@ -1,5 +1,5 @@
 <!-- Form product start -->
-<form action="/create_product_from_category" method="post">
+<form action="/create_product" method="post" enctype="multipart/form-data">
 <!-- Form product end -->
 
   <!-- Label and input for name start -->
@@ -21,7 +21,7 @@
     </label>
 
     <!-- Input for image start -->
-    <input type="text" id="image" name="image" class="form-control" value="<%= @product.image %>">
+    <input type="file" id="image" name="image" class="form-control">
     <!-- Input for image end -->
   </div>
   <!-- Label and input for image end -->

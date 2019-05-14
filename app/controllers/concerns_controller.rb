@@ -23,7 +23,7 @@ class ConcernsController < ApplicationController
     @concern = Concern.new
 
     @concern.name = params.fetch("name")
-    @concern.photo = params.fetch("photo")
+    @concern.photo = params.fetch("photo") if params.key?("photo")
     @concern.description = params.fetch("description")
 
     if @concern.valid?
@@ -45,7 +45,7 @@ class ConcernsController < ApplicationController
     @concern = Concern.find(params.fetch("id_to_modify"))
 
     @concern.name = params.fetch("name")
-    @concern.photo = params.fetch("photo")
+    @concern.photo = params.fetch("photo") if params.key?("photo")
     @concern.description = params.fetch("description")
 
     if @concern.valid?
