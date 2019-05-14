@@ -1,0 +1,25 @@
+<!-- Form customer_concern start -->
+<form action="/create_customer_concern_from_concern" method="post">
+<!-- Form customer_concern end -->
+
+  <!-- Label and input for customer_id start -->
+  <div class="form-group">
+    <label for="customer_id">
+      Customer
+    </label>
+
+    <!-- Input for customer_id start -->
+    <input type="text" id="customer_id" name="customer_id" class="form-control" value="<%= @customer_concern.customer_id %>">
+    <!-- Input for customer_id end -->
+  </div>
+  <!-- Label and input for customer_id end -->
+
+  <!-- Label and input for concern_id start -->
+  <!-- Input for concern_id start -->
+  <input type="hidden" name="concern_id" value="<%= @concern.id %>">
+  <!-- Input for concern_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create customer concern
+  </button>
+</form>

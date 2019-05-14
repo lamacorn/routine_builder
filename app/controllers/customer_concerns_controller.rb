@@ -32,6 +32,21 @@ class CustomerConcernsController < ApplicationController
     end
   end
 
+  def create_row_from_concern
+    @customer_concern = CustomerConcern.new
+
+    @customer_concern.customer_id = params.fetch("customer_id")
+    @customer_concern.concern_id = params.fetch("concern_id")
+
+    if @customer_concern.valid?
+      @customer_concern.save
+
+      redirect_to("/concerns/#{@customer_concern.concern_id}", notice: "CustomerConcern created successfully.")
+    else
+      render("customer_concern_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @customer_concern = CustomerConcern.find(params.fetch("prefill_with_id"))
 

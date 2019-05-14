@@ -36,6 +36,63 @@ class RoutineProductsController < ApplicationController
     end
   end
 
+  def create_row_from_product
+    @routine_product = RoutineProduct.new
+
+    @routine_product.routine_id = params.fetch("routine_id")
+    @routine_product.product_id = params.fetch("product_id")
+    @routine_product.special_note = params.fetch("special_note")
+    @routine_product.time_of_day = params.fetch("time_of_day")
+    @routine_product.use_frequency = params.fetch("use_frequency")
+    @routine_product.primary_concern_id = params.fetch("primary_concern_id")
+
+    if @routine_product.valid?
+      @routine_product.save
+
+      redirect_to("/products/#{@routine_product.product_id}", notice: "RoutineProduct created successfully.")
+    else
+      render("routine_product_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_routine
+    @routine_product = RoutineProduct.new
+
+    @routine_product.routine_id = params.fetch("routine_id")
+    @routine_product.product_id = params.fetch("product_id")
+    @routine_product.special_note = params.fetch("special_note")
+    @routine_product.time_of_day = params.fetch("time_of_day")
+    @routine_product.use_frequency = params.fetch("use_frequency")
+    @routine_product.primary_concern_id = params.fetch("primary_concern_id")
+
+    if @routine_product.valid?
+      @routine_product.save
+
+      redirect_to("/routines/#{@routine_product.routine_id}", notice: "RoutineProduct created successfully.")
+    else
+      render("routine_product_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_concern
+    @routine_product = RoutineProduct.new
+
+    @routine_product.routine_id = params.fetch("routine_id")
+    @routine_product.product_id = params.fetch("product_id")
+    @routine_product.special_note = params.fetch("special_note")
+    @routine_product.time_of_day = params.fetch("time_of_day")
+    @routine_product.use_frequency = params.fetch("use_frequency")
+    @routine_product.primary_concern_id = params.fetch("primary_concern_id")
+
+    if @routine_product.valid?
+      @routine_product.save
+
+      redirect_to("/concerns/#{@routine_product.primary_concern_id}", notice: "RoutineProduct created successfully.")
+    else
+      render("routine_product_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @routine_product = RoutineProduct.find(params.fetch("prefill_with_id"))
 

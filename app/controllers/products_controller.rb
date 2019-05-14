@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @routine_product = RoutineProduct.new
     @product = Product.find(params.fetch("id_to_display"))
 
     render("product_templates/show.html.erb")
@@ -30,6 +31,24 @@ class ProductsController < ApplicationController
       @product.save
 
       redirect_back(:fallback_location => "/products", :notice => "Product created successfully.")
+    else
+      render("product_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_category
+    @product = Product.new
+
+    @product.name = params.fetch("name")
+    @product.image = params.fetch("image")
+    @product.category_id = params.fetch("category_id")
+    @product.description = params.fetch("description")
+    @product.price = params.fetch("price")
+
+    if @product.valid?
+      @product.save
+
+      redirect_to("/categories/#{@product.category_id}", notice: "Product created successfully.")
     else
       render("product_templates/new_form_with_errors.html.erb")
     end

@@ -6,6 +6,7 @@ class RoutinesController < ApplicationController
   end
 
   def show
+    @routine_product = RoutineProduct.new
     @routine = Routine.find(params.fetch("id_to_display"))
 
     render("routine_templates/show.html.erb")

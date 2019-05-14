@@ -6,6 +6,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @product = Product.new
     @category = Category.find(params.fetch("id_to_display"))
 
     render("category_templates/show.html.erb")
