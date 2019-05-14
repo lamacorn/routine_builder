@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link customer_concern start -->
       <div class="col">
         <% if current_customer == @customer_concern.customer %>
           <a href="/customer_concerns/<%= @customer_concern.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link customer_concern end -->
 
-      <!-- Delete link customer_concern start -->
       <div class="col">
         <% if current_customer == @customer_concern.customer %>
           <a href="/delete_customer_concern/<%= @customer_concern.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,14 +26,12 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link customer_concern end -->
     </div>
 
     <dl>
       <dt>
         Customer
       </dt>
-      <!-- Display customer_id start -->
       <dd>
         <% if @customer_concern.customer.present? %>
           <a href="/customers/<%= @customer_concern.customer_id %>">
@@ -44,12 +39,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display customer_id end -->
 
       <dt>
         Concern
       </dt>
-      <!-- Display concern_id start -->
       <dd>
         <% if @customer_concern.concern.present? %>
           <a href="/concerns/<%= @customer_concern.concern_id %>">
@@ -57,28 +50,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display concern_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@customer_concern.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@customer_concern.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

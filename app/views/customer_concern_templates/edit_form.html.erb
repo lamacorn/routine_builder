@@ -4,24 +4,16 @@
 
 <hr>
 
-<!-- Form customer_concern start -->
 <form action="/update_customer_concern/<%= @customer_concern.id %>" method="post">
-<!-- Form customer_concern end -->
 
-  <!-- Label and input for customer_id start -->
-  <!-- Label and input for customer_id end -->
 
-  <!-- Label and input for concern_id start -->
   <div class="form-group">
     <label for="concern_id">
       Concern
     </label>
 
-    <!-- Input for concern_id start -->
     <%= select_tag(:concern_id, options_from_collection_for_select(Concern.all, :id, :name, @customer_concern.concern_id), :class => "form-control") %>
-    <!-- Input for concern_id end -->
   </div>
-  <!-- Label and input for concern_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update customer concern

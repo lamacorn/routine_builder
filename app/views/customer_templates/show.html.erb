@@ -11,13 +11,11 @@
         </a>
       </div>
 
-      <!-- Edit link customer start -->
       <div class="col">
         <a href="/customers/<%= @customer.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit customer
         </a>
       </div>
-      <!-- Edit link customer end -->
 
     </div>
 
@@ -25,142 +23,111 @@
       <dt>
         Email
       </dt>
-      <!-- Display email start -->
       <dd>
         <%= @customer.email %>
       </dd>
-      <!-- Display email end -->
 
       <dt>
         Password
       </dt>
-      <!-- Display password start -->
       <dd>
         <%= @customer.password %>
       </dd>
-      <!-- Display password end -->
 
       <dt>
         Phonenumber
       </dt>
-      <!-- Display phonenumber start -->
       <dd>
         <%= @customer.phonenumber %>
       </dd>
-      <!-- Display phonenumber end -->
 
       <dt>
         Firstname
       </dt>
-      <!-- Display firstname start -->
       <dd>
         <%= @customer.firstname %>
       </dd>
-      <!-- Display firstname end -->
 
       <dt>
         Lastname
       </dt>
-      <!-- Display lastname start -->
       <dd>
         <%= @customer.lastname %>
       </dd>
-      <!-- Display lastname end -->
 
       <dt>
         Optin texts
       </dt>
-      <!-- Display optin_texts start -->
       <dd>
         <%= @customer.optin_texts %>
       </dd>
-      <!-- Display optin_texts end -->
 
       <dt>
         Optin email
       </dt>
-      <!-- Display optin_email start -->
       <dd>
         <%= @customer.optin_email %>
       </dd>
-      <!-- Display optin_email end -->
 
       <dt>
         Date firstconsultation
       </dt>
-      <!-- Display date_firstconsultation start -->
       <dd>
         <%= @customer.date_firstconsultation %>
       </dd>
-      <!-- Display date_firstconsultation end -->
 
       <dt>
         Date lastconsultation
       </dt>
-      <!-- Display date_lastconsultation start -->
       <dd>
         <%= @customer.date_lastconsultation %>
       </dd>
-      <!-- Display date_lastconsultation end -->
 
       <dt>
         Address street
       </dt>
-      <!-- Display address_street start -->
       <dd>
         <%= @customer.address_street %>
       </dd>
-      <!-- Display address_street end -->
 
       <dt>
         Address city
       </dt>
-      <!-- Display address_city start -->
       <dd>
         <%= @customer.address_city %>
       </dd>
-      <!-- Display address_city end -->
 
       <dt>
         Address state
       </dt>
-      <!-- Display address_state start -->
       <dd>
         <%= @customer.address_state %>
       </dd>
-      <!-- Display address_state end -->
 
       <dt>
         Address zipcode
       </dt>
-      <!-- Display address_zipcode start -->
       <dd>
         <%= @customer.address_zipcode %>
       </dd>
-      <!-- Display address_zipcode end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@customer.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@customer.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "customer_templates/customer_customer_concerns" %>
@@ -172,4 +139,3 @@
     <%= render partial: "customer_templates/customer_routines" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

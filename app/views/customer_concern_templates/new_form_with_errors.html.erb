@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @customer_concern.present? %>
   <% if @customer_concern.errors.any? %>
     <% @customer_concern.errors.full_messages.each do |message| %>
@@ -16,27 +15,17 @@
 
 <hr>
 
-<!-- Form customer_concern start -->
 <form action="/create_customer_concern" method="post">
-<!-- Form customer_concern end -->
 
-  <!-- Label and input for customer_id start -->
-  <!-- Input for "customer_id" start -->
   <input type="hidden" name="customer_id" value="<%= current_customer.id %>">
-  <!-- Input for "customer_id" end -->
-  <!-- Label and input for customer_id end -->
 
-  <!-- Label and input for concern_id start -->
   <div class="form-group">
     <label for="concern_id">
       Concern
     </label>
 
-    <!-- Input for concern_id start -->
     <%= select_tag(:concern_id, options_from_collection_for_select(Concern.all, :id, :name, @customer_concern.concern_id), :class => "form-control") %>
-    <!-- Input for concern_id end -->
   </div>
-  <!-- Label and input for concern_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create customer concern

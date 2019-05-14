@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "routine_product_templates/routine_products_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -70,13 +66,10 @@
 
       <% @routine_products.each do |routine_product| %>
       <tr>
-        <!-- Display routine_product.id start -->
         <td>
           <%= routine_product.id %>
         </td>
-        <!-- Display routine_product.id end -->
 
-        <!-- Display routine_product.routine_id start -->
         <td>
           <% if routine_product.routine.present? %>
             <a href="/routines/<%= routine_product.routine.id %>">
@@ -84,9 +77,7 @@
             </a>
           <% end %>
         </td>
-        <!-- Display routine_product.routine_id end -->
 
-        <!-- Display routine_product.product_id start -->
         <td>
           <% if routine_product.product.present? %>
             <a href="/products/<%= routine_product.product.id %>">
@@ -94,27 +85,19 @@
             </a>
           <% end %>
         </td>
-        <!-- Display routine_product.product_id end -->
 
-        <!-- Display routine_product.special_note start -->
         <td>
           <%= routine_product.special_note %>
         </td>
-        <!-- Display routine_product.special_note end -->
 
-        <!-- Display routine_product.time_of_day start -->
         <td>
           <%= routine_product.time_of_day %>
         </td>
-        <!-- Display routine_product.time_of_day end -->
 
-        <!-- Display routine_product.use_frequency start -->
         <td>
           <%= routine_product.use_frequency %>
         </td>
-        <!-- Display routine_product.use_frequency end -->
 
-        <!-- Display routine_product.primary_concern_id start -->
         <td>
           <% if routine_product.primary_concern.present? %>
             <a href="/concerns/<%= routine_product.primary_concern.id %>">
@@ -122,19 +105,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display routine_product.primary_concern_id end -->
 
-        <!-- Display routine_product.created_at start -->
         <td>
           <%= time_ago_in_words(routine_product.created_at) %> ago
         </td>
-        <!-- Display routine_product.created_at end -->
 
-        <!-- Display routine_product.updated_at start -->
         <td>
           <%= time_ago_in_words(routine_product.updated_at) %> ago
         </td>
-        <!-- Display routine_product.updated_at end -->
 
         <td>
           <a href="/routine_products/<%= routine_product.id %>">

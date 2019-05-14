@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @routine.errors.any? %>
   <% @routine.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,12 +12,8 @@
 
 <hr>
 
-<!-- Form routine start -->
 <form action="/update_routine/<%= @routine.id %>" method="post">
-<!-- Form routine end -->
 
-  <!-- Label and input for customer_id start -->
-  <!-- Label and input for customer_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update routine

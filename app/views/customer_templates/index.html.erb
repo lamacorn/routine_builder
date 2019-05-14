@@ -10,13 +10,9 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -94,101 +90,69 @@
 
       <% @customers.each do |customer| %>
       <tr>
-        <!-- Display customer.id start -->
         <td>
           <%= customer.id %>
         </td>
-        <!-- Display customer.id end -->
 
-        <!-- Display customer.email start -->
         <td>
           <%= customer.email %>
         </td>
-        <!-- Display customer.email end -->
 
-        <!-- Display customer.password start -->
         <td>
           <%= customer.password %>
         </td>
-        <!-- Display customer.password end -->
 
-        <!-- Display customer.phonenumber start -->
         <td>
           <%= customer.phonenumber %>
         </td>
-        <!-- Display customer.phonenumber end -->
 
-        <!-- Display customer.firstname start -->
         <td>
           <%= customer.firstname %>
         </td>
-        <!-- Display customer.firstname end -->
 
-        <!-- Display customer.lastname start -->
         <td>
           <%= customer.lastname %>
         </td>
-        <!-- Display customer.lastname end -->
 
-        <!-- Display customer.optin_texts start -->
         <td>
           <%= customer.optin_texts %>
         </td>
-        <!-- Display customer.optin_texts end -->
 
-        <!-- Display customer.optin_email start -->
         <td>
           <%= customer.optin_email %>
         </td>
-        <!-- Display customer.optin_email end -->
 
-        <!-- Display customer.date_firstconsultation start -->
         <td>
           <%= customer.date_firstconsultation %>
         </td>
-        <!-- Display customer.date_firstconsultation end -->
 
-        <!-- Display customer.date_lastconsultation start -->
         <td>
           <%= customer.date_lastconsultation %>
         </td>
-        <!-- Display customer.date_lastconsultation end -->
 
-        <!-- Display customer.address_street start -->
         <td>
           <%= customer.address_street %>
         </td>
-        <!-- Display customer.address_street end -->
 
-        <!-- Display customer.address_city start -->
         <td>
           <%= customer.address_city %>
         </td>
-        <!-- Display customer.address_city end -->
 
-        <!-- Display customer.address_state start -->
         <td>
           <%= customer.address_state %>
         </td>
-        <!-- Display customer.address_state end -->
 
-        <!-- Display customer.address_zipcode start -->
         <td>
           <%= customer.address_zipcode %>
         </td>
-        <!-- Display customer.address_zipcode end -->
 
-        <!-- Display customer.created_at start -->
         <td>
           <%= time_ago_in_words(customer.created_at) %> ago
         </td>
-        <!-- Display customer.created_at end -->
 
-        <!-- Display customer.updated_at start -->
         <td>
           <%= time_ago_in_words(customer.updated_at) %> ago
         </td>
-        <!-- Display customer.updated_at end -->
 
         <td>
           <a href="/customers/<%= customer.id %>">

@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "concern_templates/concerns_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -58,41 +54,29 @@
 
       <% @concerns.each do |concern| %>
       <tr>
-        <!-- Display concern.id start -->
         <td>
           <%= concern.id %>
         </td>
-        <!-- Display concern.id end -->
 
-        <!-- Display concern.name start -->
         <td>
           <%= concern.name %>
         </td>
-        <!-- Display concern.name end -->
 
-        <!-- Display concern.photo start -->
         <td>
           <img src='<%= concern.photo %>' class='img-fluid'>
         </td>
-        <!-- Display concern.photo end -->
 
-        <!-- Display concern.description start -->
         <td>
           <%= concern.description %>
         </td>
-        <!-- Display concern.description end -->
 
-        <!-- Display concern.created_at start -->
         <td>
           <%= time_ago_in_words(concern.created_at) %> ago
         </td>
-        <!-- Display concern.created_at end -->
 
-        <!-- Display concern.updated_at start -->
         <td>
           <%= time_ago_in_words(concern.updated_at) %> ago
         </td>
-        <!-- Display concern.updated_at end -->
 
         <td>
           <a href="/concerns/<%= concern.id %>">

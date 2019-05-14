@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @routine_product.present? %>
   <% if @routine_product.errors.any? %>
     <% @routine_product.errors.full_messages.each do |message| %>
@@ -16,81 +15,55 @@
 
 <hr>
 
-<!-- Form routine_product start -->
 <form action="/create_routine_product" method="post">
-<!-- Form routine_product end -->
 
-  <!-- Label and input for routine_id start -->
   <div class="form-group">
     <label for="routine_id">
       Routine
     </label>
 
-    <!-- Input for routine_id start -->
     <%= select_tag(:routine_id, options_from_collection_for_select(Routine.all, :id, :customer_id, @routine_product.routine_id), :class => "form-control") %>
-    <!-- Input for routine_id end -->
   </div>
-  <!-- Label and input for routine_id end -->
 
-  <!-- Label and input for product_id start -->
   <div class="form-group">
     <label for="product_id">
       Product
     </label>
 
-    <!-- Input for product_id start -->
     <%= select_tag(:product_id, options_from_collection_for_select(Product.all, :id, :name, @routine_product.product_id), :class => "form-control") %>
-    <!-- Input for product_id end -->
   </div>
-  <!-- Label and input for product_id end -->
 
-  <!-- Label and input for special_note start -->
   <div class="form-group">
     <label for="special_note">
       Special note
     </label>
 
-    <!-- Input for special_note start -->
     <textarea id="special_note" name="special_note" class="form-control" rows="3"><%= @routine_product.special_note %></textarea>
-    <!-- Input for special_note end -->
   </div>
-  <!-- Label and input for special_note end -->
 
-  <!-- Label and input for time_of_day start -->
   <div class="form-group">
     <label for="time_of_day">
       Time of day
     </label>
 
-    <!-- Input for time_of_day start -->
     <input type="text" id="time_of_day" name="time_of_day" class="form-control" value="<%= @routine_product.time_of_day %>">
-    <!-- Input for time_of_day end -->
   </div>
-  <!-- Label and input for time_of_day end -->
 
-  <!-- Label and input for use_frequency start -->
   <div class="form-group">
     <label for="use_frequency">
       Use frequency
     </label>
 
-    <!-- Input for use_frequency start -->
     <input type="text" id="use_frequency" name="use_frequency" class="form-control" value="<%= @routine_product.use_frequency %>">
-    <!-- Input for use_frequency end -->
   </div>
-  <!-- Label and input for use_frequency end -->
 
-  <!-- Label and input for primary_concern_id start -->
   <div class="form-group">
     <label for="primary_concern_id">
       Primary concern
     </label>
 
-    <!-- Input for primary_concern_id start -->
     <%= select_tag(:primary_concern_id, options_from_collection_for_select(Concern.all, :id, :name, @routine_product.primary_concern_id), :class => "form-control") %>
-    <!-- Input for primary_concern_id end -->
   </div>
-  <!-- Label and input for primary_concern_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create routine product

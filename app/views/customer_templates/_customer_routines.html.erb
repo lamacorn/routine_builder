@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @customer.routines.each do |routine| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/routines/<%= routine.id %>">
           <%= routine.customer_id %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

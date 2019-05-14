@@ -1,17 +1,8 @@
-<!-- Form customer_concern start -->
 <form action="/create_customer_concern_from_concern" method="post">
-<!-- Form customer_concern end -->
 
-  <!-- Label and input for customer_id start -->
-  <!-- Input for "customer_id" start -->
   <input type="hidden" name="customer_id" value="<%= current_customer.id %>">
-  <!-- Input for "customer_id" end -->
-  <!-- Label and input for customer_id end -->
 
-  <!-- Label and input for concern_id start -->
-  <!-- Input for concern_id start -->
   <input type="hidden" name="concern_id" value="<%= @concern.id %>">
-  <!-- Input for concern_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create customer concern
