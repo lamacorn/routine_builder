@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Concern resource:
+
+  # CREATE
+  get("/concerns/new", { :controller => "concerns", :action => "new_form" })
+  post("/create_concern", { :controller => "concerns", :action => "create_row" })
+
+  # READ
+  get("/concerns", { :controller => "concerns", :action => "index" })
+  get("/concerns/:id_to_display", { :controller => "concerns", :action => "show" })
+
+  # UPDATE
+  get("/concerns/:prefill_with_id/edit", { :controller => "concerns", :action => "edit_form" })
+  post("/update_concern/:id_to_modify", { :controller => "concerns", :action => "update_row" })
+
+  # DELETE
+  get("/delete_concern/:id_to_remove", { :controller => "concerns", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Category resource:
 
   # CREATE
