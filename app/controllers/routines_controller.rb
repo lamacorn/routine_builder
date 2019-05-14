@@ -1,5 +1,5 @@
 class RoutinesController < ApplicationController
-  before_action :current_customer_must_be_routine_customer, :only => [:edit_form, :update_row, :destroy_row]
+  before_action :current_customer_must_be_routine_customer, :only => [:show, :edit_form, :update_row, :destroy_row]
 
   def current_customer_must_be_routine_customer
     routine = Routine.find(params["id_to_display"] || params["prefill_with_id"] || params["id_to_modify"] || params["id_to_remove"])
