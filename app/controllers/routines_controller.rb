@@ -41,7 +41,7 @@ class RoutinesController < ApplicationController
   def update_row
     @routine = Routine.find(params.fetch("id_to_modify"))
 
-    @routine.customer_id = params.fetch("customer_id")
+    
 
     if @routine.valid?
       @routine.save

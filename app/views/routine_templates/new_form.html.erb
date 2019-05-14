@@ -10,15 +10,9 @@
 <!-- Form routine end -->
 
   <!-- Label and input for customer_id start -->
-  <div class="form-group">
-    <label for="customer_id">
-      Customer
-    </label>
-
-    <!-- Input for customer_id start -->
-    <%= select_tag(:customer_id, options_from_collection_for_select(Customer.all, :id, :email, @routine.customer_id), :class => "form-control") %>
-    <!-- Input for customer_id end -->
-  </div>
+  <!-- Input for "customer_id" start -->
+  <input type="hidden" name="customer_id" value="<%= current_customer.id %>">
+  <!-- Input for "customer_id" end -->
   <!-- Label and input for customer_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
