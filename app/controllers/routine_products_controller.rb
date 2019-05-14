@@ -1,6 +1,6 @@
 class RoutineProductsController < ApplicationController
   def index
-    @routine_products = RoutineProduct.all
+    @routine_products = RoutineProduct.page(params[:page]).per(10)
 
     render("routine_product_templates/index.html.erb")
   end

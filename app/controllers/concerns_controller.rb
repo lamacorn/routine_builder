@@ -1,6 +1,6 @@
 class ConcernsController < ApplicationController
   def index
-    @concerns = Concern.all
+    @concerns = Concern.page(params[:page]).per(10)
 
     render("concern_templates/index.html.erb")
   end
